@@ -31,7 +31,7 @@ BEM(Block Element Modifier)
 
 ```html
 <div class="container">
-	<div class="container_name"></div>
+	<div class="container__name"></div>
 	<div class="item">
 		<div class="item__name"></div>
 	</div>
