@@ -1,5 +1,9 @@
 # starbucks
 
+
+site : https://dkdkf77.github.io/starbucks/
+
+
 ### 클론 코딩하기
 
 ⭐️ 폴더 안에 파비콘.ico 파일이 있으면 보통의 브라우저 들은 자동 루트 연동되어 연결해준다
