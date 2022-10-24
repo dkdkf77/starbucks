@@ -56,3 +56,19 @@ window.addEventListener(
 );
 
 // _.throttle(함수, 시간)
+
+//visual title, cup1, cup2, spoon fade-in
+
+const fadeEls = document.querySelectorAll('.visual .fade-in');
+
+console.log(fadeEls);
+
+// fadeEls.각각을 fucntion 시키는데 이 요소 값을 fadeEl로 이름을 붙이고 작동 시킴
+fadeEls.forEach(function (fadeEl, index) {
+  // gsap.to(요소, 지속시간, 옵션=>객체 데이터 {opacity:1 , back...});
+  gsap.to(fadeEl, 1, {
+    // (index + 1) * 0.7, 반복이 되면 0+1 *0.7 => 1+1 *0.7 / 점차 느리게 된다
+    delay: (index + 1) * 0.7,
+    opacity: 1,
+  });
+});
