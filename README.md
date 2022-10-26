@@ -130,7 +130,13 @@ Swiper JS 라이브러리 사용
 [Swiper API](https://swiperjs.com/swiper-api)(옵션)을 확인하세요!
 
 `new Swiper(요소, 옵션);`
-
+```jsx
+new Swiper('.swiper-container', {
+  direction: 'vertical', // 수직 슬라이드
+  autoplay: true, // 자동 재생 여부
+  loop: true // 반복 재생 여부
+});
+```
 
 
 
