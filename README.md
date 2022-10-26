@@ -103,15 +103,16 @@ window.addEventListener(
 https://user-images.githubusercontent.com/88579497/197165806-1e7fe3cd-3e7b-4e48-80d8-0a94cbcbcfa8.mov
 
 Swiper JS 라이브러리 사용 
-Swiper
-Swiper는 하드웨어 가속 전환과 여러 기본 동작을 갖춘 현대적인 슬라이드 라이브러리입니다.
+## **Swiper**
 
-Getting Started With Swiper
+[Swiper](https://swiperjs.com/)는 하드웨어 가속 전환과 여러 기본 동작을 갖춘 현대적인 슬라이드 라이브러리입니다.
 
-[2021.08.26 Updated]
-강의와 같이 Swiper 6버전을 사용합니다.
-7/8버전의 사용법이 다르기 때문에 6버전을 유지합니다.
+[Getting Started With Swiper](https://swiperjs.com/get-started)
 
+> [2021.08.26 Updated]강의와 같이 Swiper 6버전을 사용합니다.7/8버전의 사용법이 다르기 때문에 6버전을 유지합니다.
+> 
+
+```jsx
 <!-- in HEAD -->
 <link rel="stylesheet" href="https://unpkg.com/swiper@6.8.4/swiper-bundle.min.css" />
 <script src="https://unpkg.com/swiper@6.8.4/swiper-bundle.min.js"></script>
@@ -124,15 +125,11 @@ Getting Started With Swiper
     <div class="swiper-slide">3</div>
   </div>
 </div>
-Swiper API(옵션)을 확인하세요!
+```
 
-new Swiper(요소, 옵션);
-new Swiper('.swiper-container', {
-  direction: 'vertical', // 수직 슬라이드
-  autoplay: true, // 자동 재생 여부
-  loop: true // 반복 재생 여부
-});
+[Swiper API](https://swiperjs.com/swiper-api)(옵션)을 확인하세요!
 
+`new Swiper(요소, 옵션);`
 
 
 
