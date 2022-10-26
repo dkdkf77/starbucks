@@ -72,3 +72,11 @@ fadeEls.forEach(function (fadeEl, index) {
     opacity: 1,
   });
 });
+
+// new Swiper(선택자,옵션)  new = 자바스크립트 생성자 자바스크립트 클래스
+
+new Swiper('.notice-line .swiper-container', {
+  direction: 'vertical',
+  autoplay: true,
+  loop: true,
+});
