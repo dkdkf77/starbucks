@@ -139,6 +139,30 @@ new Swiper('.swiper-container', {
 ```
 
 
+### Swiper.js 기능 horizon 
+
+```jsx
+//swiper horizon 은 기본 값이므로 direction 값을 설정하지 않아도 된다
+
+new Swiper('.promotion .swiper-container', {
+  slidesPerView: 3, // 한번에 보여줄 슬라이드 갯수
+  spaceBetween: 10, // 슬라이드 사이 여백
+  centeredSlides: true, // 1번 슬라이드가 가운데 보기
+  loop: true,
+  autoplay: {
+    delay: 5000,
+  },
+  pagination: {
+    el: '.promotion .swiper-pagination',
+    clickable: true, // 페이지 번호 요소 선택자 
+  },
+  navigation: {
+    prevEl: '.promotion .swiper-prev',
+    nextEl: '.promotion .swiper-next',
+  },
+});
+```
+
 
 
 
