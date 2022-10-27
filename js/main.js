@@ -86,9 +86,9 @@ new Swiper('.promotion .swiper-container', {
   spaceBetween: 10, // 슬라이드 사이 여백
   centeredSlides: true, // 1번 슬라이드가 가운데 보기
   loop: true,
-  // autoplay: {
-  //   delay: 5000,
-  // },
+  autoplay: {
+    delay: 5000,
+  },
   pagination: {
     el: '.promotion .swiper-pagination',
     clickable: true, // 페이지 번호 요소 선택자
