@@ -162,9 +162,104 @@ new Swiper('.promotion .swiper-container', {
   },
 });
 ```
+### Youtube IFame API 사용
 
 
+```jsx
 
+<!DOCTYPE html>
+<html>
+  <body>
+    <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
+    <div id="player"></div>
+
+    <script>
+      // 2. This code loads the IFrame Player API code asynchronously.
+      var tag = document.createElement('script');
+
+      tag.src = "https://www.youtube.com/iframe_api";
+      var firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+      // 3. This function creates an <iframe> (and YouTube player)
+      //    after the API code downloads.
+      var player;
+      function onYouTubeIframeAPIReady() {
+        player = new YT.Player('player', {
+          height: '360',
+          width: '640',
+          videoId: 'M7lc1UVf-VE',
+          events: {
+            'onReady': onPlayerReady,
+            'onStateChange': onPlayerStateChange
+          }
+        });
+      }
+
+      // 4. The API will call this function when the video player is ready.
+      function onPlayerReady(event) {
+        event.target.playVideo();
+      }
+
+      // 5. The API calls this function when the player's state changes.
+      //    The function indicates that when playing a video (state=1),
+      //    the player should play for six seconds and then stop.
+      var done = false;
+      function onPlayerStateChange(event) {
+        if (event.data == YT.PlayerState.PLAYING && !done) {
+          setTimeout(stopVideo, 6000);
+          done = true;
+        }
+      }
+      function stopVideo() {
+        player.stopVideo();
+      }
+    </script>
+  </body>
+</html>
+```
+
+[IFrame Player API](https://developers.google.com/youtube/iframe_api_reference?hl=ko)를 통해 YouTube 동영상을 제어할 수 있습니다.
+
+유튜브 영상이 출력될 위치에 요소를 지정(생성)합니다.
+
+```jsx
+<!-- in HEAD -->
+<script defer src="./js/youtube.js"></script>
+
+<!-- in BODY -->
+<div id="player"></div>
+```
+
+`onYouTubePlayerAPIReady` 함수 이름은 Youtube IFrame Player API에서 사용하는 이름이기 때문에 다르게 지정하면 동작하지 않습니다!그리고 함수는 전역(Global) 등록해야 합니다!
+
+[플레이어 매개변수(playerVars)](https://developers.google.com/youtube/player_parameters.html?playerVersion=HTML5&hl=ko#Parameters)에서 더 많은 옵션을 확인할 수 있습니다.
+
+```jsx
+// Youtube IFrame API를 비동기로 로드합니다.
+var tag = document.createElement('script');
+tag.src = "https://www.youtube.com/iframe_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+function onYouTubePlayerAPIReady() {
+  // <div id="player"></div>
+  new YT.Player('player', {
+    videoId: 'An6LvWQuj_8', // 재생할 유튜브 영상 ID
+    playerVars: {
+      autoplay: true, // 자동 재생 유무
+      loop: true, // 반복 재생 유무
+      playlist: 'An6LvWQuj_8' // 반복 재생할 유튜브 영상 ID 목록
+    },
+    events: {
+      // 영상이 준비되었을 때,
+      onReady: function (event) {
+        event.target.mute(); // 음소거!
+      }
+    }
+  });
+}
+```
 
 
 
