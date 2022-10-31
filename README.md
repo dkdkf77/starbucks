@@ -261,6 +261,54 @@ function onYouTubePlayerAPIReady() {
 }
 ```
 
+### 3D 효과 주는 방법
+
+```html
+<div class ="container">
+	<div class = "item front">앞 </div>
+	<div class = "item back">뒤</div>
+</div>
+```
+
+```css
+body {
+	padding:50px;
+}
+
+.container {
+  width: 100px;
+  height: 100px;
+  perspective: 300px; /*원근법 추가*/
+}
+
+.container .item {
+	width : 100px;
+	height: 100px;
+	border : 4px solid red;
+	font-size : 60px;
+  backface-visibility : hidden; /*뒷면 히든*/
+  transition: all 1s;
+}
+
+.container .item.front{
+  transform: rotateY(0);
+  position : absolute;
+}
+
+.container:hover .item.front{
+  transform: rotateY(180deg);
+}
+
+.container .item.back{
+ transform : rotateY( -180deg);
+}
+
+.container:hover .item.back{
+  transform : rotateY(0); /*뒷면을 초기화*/
+};
+```
+
+https://user-images.githubusercontent.com/88579497/198985402-8c53a0a7-f82c-4265-95f0-5f97194e4ef5.mov
 
 
 
