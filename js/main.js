@@ -139,6 +139,16 @@ function floatingObject(selector, delay, size) {
   );
 }
 
-floatingObject('.floating1', 1, 15);
+floatingObject('.floating1', 1, 10);
 floatingObject('.floating2', 0.5, 20);
 floatingObject('.floating3', 1.5, 10);
+
+const spyEls = document.querySelectorAll('section.scroll-spy');
+spyEls.forEach(function (spyEl) {
+  new ScrollMagic.Scene({
+    triggerElement: spyEl, // section 부분에 scroll-spy 라는 엘리먼트중 하나를 할당 , 보여짐 여부를 감시할 요소를 할당
+    triggerHook: 0.8,
+  }) // 스크롤매직의 명령어에서 3개의 메소드체이닝이 실행 됌 메소드는 객체를 넣어줘야 됌
+    .setClassToggle(spyEl, 'show')
+    .addTo(new ScrollMagic.Controller()); // Scene은 ScrollMagic의 명령어를 통해서 스크롤 감시, setClassToggle 은 클래스 속성을 넣고 뺐다 하는 것을 추가
+});
