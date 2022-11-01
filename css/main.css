@@ -455,6 +455,7 @@ header .badges .badge {
   bottom: 40px;
   left: 0;
   right: 0;
+  z-index: 1;
 }
 
 .notice .promotion .swiper-pagination .swiper-pagination-bullet {
