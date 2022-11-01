@@ -83,7 +83,7 @@ a {
 
 header {
   width: 100%;
-  z-index: 9;
+  z-index: 11;
   /* fixed를 하면 width 값이 최소한으로 사용하게끔해서 망가지게 된다 이때는 width 값을 100%를 주면 해결된다 */
 
   position: fixed;
