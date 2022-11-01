@@ -707,7 +707,6 @@ header .badges .badge {
   width: 334px;
   height: 334px;
   perspective: 300px;
-  box-shadow: 1px 1px 1px 1px;
 }
 .reserve-store .medal .front,
 .reserve-store .medal .back {
