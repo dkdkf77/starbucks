@@ -652,7 +652,7 @@ header .badges .badge {
 .season-product .floating3 {
   position: absolute;
   top: -200px;
-  right: -300px;
+  right: -400px;
 }
 .season-product .text-group {
   position: absolute;
@@ -815,4 +815,49 @@ header .badges .badge {
 .find-store .text-group .description {
 }
 .find-store .text-group .title {
+}
+
+/* awards */
+.awards {
+  background-color: #272727;
+}
+.awards .inner {
+  padding: 40px 0;
+}
+
+.awards .swiper-container {
+  width: 100%;
+  height: 40px;
+}
+
+.awards .swiper-prev,
+.awards .swiper-next {
+  width: 42px;
+  height: 42px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  outline: none;
+  color: #ffff;
+  opacity: 0.3;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.awards .swiper-prev {
+  left: -100px;
+}
+.awards .swiper-next {
+  right: -100px;
+}
+
+.awards .swiper-prev:hover,
+.awards .swiper-next:hover {
+  background-color: #fff;
+  color: #333;
 }
