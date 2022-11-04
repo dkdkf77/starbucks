@@ -27,6 +27,7 @@ searchInputEl.addEventListener('blur', function () {
 // 일정 값 내려가면 badges가 없어 지게 하는 문법
 
 const badgeEl = document.querySelector('.badges');
+const toTopEl = document.querySelector('#to-top');
 //window = 프로젝트 브라우저 창의 하나 window 객체는 브라우저의 명령들을 들고 있다
 // 우리가 보고 있는 화면 자체 밑에 명령어 자체는 스크롤 할때 마다 스크롤 출력
 // 화면이 버벅이는 것을 표현 될수 있어서  실행되는 여러개의 함수를 외부에서 제어 하는 목적
@@ -44,6 +45,10 @@ window.addEventListener(
         opacity: 0,
         display: 'none',
       });
+      // to top버튼 보이기!
+      gsap.to(toTopEl, 0.2, {
+        x: 0,
+      });
     } else {
       // 배지 보이기
       // badgeEl.style.display = 'block';
@@ -51,9 +56,19 @@ window.addEventListener(
         opacity: 1,
         display: 'block',
       });
+      // to top버튼 숨기기!
+      gsap.to(toTopEl, 0.2, {
+        x: 100,
+      });
     }
   }, 300)
 );
+
+toTopEl.addEventListener('click', function () {
+  gsap.to(window, 0.7, {
+    scrollTo: 0,
+  });
+});
 
 // _.throttle(함수, 시간)
 
@@ -163,3 +178,7 @@ spyEls.forEach(function (spyEl) {
     .setClassToggle(spyEl, 'show')
     .addTo(new ScrollMagic.Controller()); // Scene은 ScrollMagic의 명령어를 통해서 스크롤 감시, setClassToggle 은 클래스 속성을 넣고 뺐다 하는 것을 추가
 });
+
+const thisYear = document.querySelector('.this-year');
+
+thisYear.textContent = new Date().getFullYear();
